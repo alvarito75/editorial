@@ -1761,6 +1761,10 @@
     <Content Include="images\cochasoft\EDITORIAL COCHASOFT.png" />
     <Content Include="images\cochasoft\leyendo libro.jpg" />
     <Content Include="images\cochasoft\visitanos.jpg" />
+    <Content Include="vender_libro.aspx" />
+    <Content Include="administrar_miembros.aspx" />
+    <Content Include="inventario.aspx" />
+    <Content Include="adminlogin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -1837,6 +1841,30 @@
     </Compile>
     <Compile Include="administrar_editores.aspx.designer.cs">
       <DependentUpon>administrar_editores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vender_libro.aspx.cs">
+      <DependentUpon>vender_libro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vender_libro.aspx.designer.cs">
+      <DependentUpon>vender_libro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_miembros.aspx.cs">
+      <DependentUpon>administrar_miembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_miembros.aspx.designer.cs">
+      <DependentUpon>administrar_miembros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inventario.aspx.cs">
+      <DependentUpon>inventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inventario.aspx.designer.cs">
+      <DependentUpon>inventario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlogin.aspx.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminlogin.aspx.designer.cs">
+      <DependentUpon>adminlogin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

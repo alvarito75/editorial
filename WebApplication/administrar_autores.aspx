@@ -2,6 +2,11 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+      $(document).ready(function () { 
+          $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+      });
+   </script>
 </asp:Content>
 
 
@@ -42,7 +47,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID"></asp:TextBox>
-                                        <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" />
+                                        <asp:Button class="btn btn-primary" ID="Button1" runat="server" OnClick="Button1_Click" Text="Obtener" />
                                     </div>
                                 </div>
                             </div>
@@ -58,13 +63,13 @@
  
                         <div class="row">
                             <div class="col-4">
-                                <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" Text="Crear" />
+                                <asp:Button ID="Button2" class="btn btn-lg btn-block btn-success" runat="server" OnClick="Button2_Click" Text="Crear" />
                             </div>
                             <div class="col-4">
-                                <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" Text="Actualizar" />
+                                <asp:Button ID="Button3" class="btn btn-lg btn-block btn-warning" runat="server" OnClick="Button3_Click" Text="Actualizar" />
                             </div>
                             <div class="col-4">
-                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" Text="Eliminar" />
+                                <asp:Button ID="Button4" class="btn btn-lg btn-block btn-danger" runat="server" OnClick="Button4_Click" Text="Eliminar" />
                             </div>
                         </div>
  
@@ -100,9 +105,10 @@
                         </div>
  
                         <div class="row">
-                            <div class="col">
-                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
-                            </div>
+                             <div class="col">
+                                <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server">
+                                </asp:GridView>
+                             </div>
                         </div>
  
  

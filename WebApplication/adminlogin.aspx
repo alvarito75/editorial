@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="Editorial.master" Inherits="WebApplication.userlogin" %>
+﻿<%@ Page Language="C#" MasterPageFile="Editorial.master" Inherits="WebApplication.adminlogin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,14 +13,14 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="150px" src="images/imgs/generaluser.png"/>
+                           <img width="150px" src="images/imgs/adminuser.png"/>
                         </center>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h3>Login Usuario</h3>
+                           <h3>Login Administrador</h3>
                         </center>
                      </div>
                   </div>
@@ -31,19 +31,16 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label>ID Usuario</label>
+                        <label>ID Admin</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID Usuario"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="ID Admin"></asp:TextBox>
                         </div>
                         <label>Contrasenia</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Contrasenia" TextMode="Password"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                       <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" OnClick="Button1_Click" runat="server" Text="Ingresar" />
-                        </div>
-                        <div class="form-group">
-                           <a href="registrarusuario.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Registrarse" /></a>
+                           <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1"  OnClick="Button1_Click" runat="server" Text="Ingresar" />
                         </div>
                      </div>
                   </div>

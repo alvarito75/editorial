@@ -17,6 +17,7 @@
         <script src="bootstrap/js/popper.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="sweetalert/js/sweetalert.min.js"></script>
+        <script src="datatables/js/jquery.dataTables.min.js"></script>
         <script src="bootstrap/js/custom.js"></script>
         
         <asp:ContentPlaceHolder ID="head" runat="server">
@@ -45,9 +46,6 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="acerca_de_nosotros.aspx">Acerca de nosotros</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Condiciones</a>
-                        </li>
  
                     </ul>
  
@@ -57,17 +55,17 @@
                         </li>
                         
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" OnClick="LinkButton1_Click" runat="server">Login</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton2" OnClick="LinkButton2_Click" runat="server">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Salir</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" OnClick="LinkButton3_Click" Visible="False" runat="server">Salir</asp:LinkButton>
                         </li>
  
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server">Bienvenido usuario</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" Visible="False" runat="server">Bienvenido usuario</asp:LinkButton>
  
                         </li>
                     </ul>
@@ -91,17 +89,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p>
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" OnClick="LinkButton6_Click" runat="server">Login administrador</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" OnClick="LinkButton11_Click" runat="server">Administrar Autores</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" OnClick="LinkButton11_Click" Visible="False" runat="server">Administrar Autores</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" OnClick="LinkButton12_Click" runat="server">Administrar Editores</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" OnClick="LinkButton12_Click" Visible="False" runat="server">Administrar Editores</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Book Inventory</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton8" OnClick="LinkButton8_Click" Visible="False" runat="server">Inventario</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton9" runat="server">Book Issuing</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton9" OnClick="LinkButton9_Click" Visible="False" runat="server">Venta de libros</asp:LinkButton>
                             &nbsp;
-                             <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Member Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton10" OnClick="LinkButton10_Click" Visible="False" runat="server">Administrar Miembros</asp:LinkButton>
                         </p>
  
                     </div>
@@ -110,7 +108,7 @@
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy All right Reversed. <a class="footerlinks" href="#" target="_blank">Simple Snippets</a></p>
+                        <p style="color:whitesmoke">&copy All right Reversed. <a class="footerlinks" href="https://github.com/alvarito75/editorial" target="_blank">Editorial Cochabamba</a></p>
                     </div>
                 </div>
             </div>

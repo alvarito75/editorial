@@ -22,7 +22,53 @@ namespace WebApplication
             Password=Alvarito_*5
         ";
 
+
+        // Registrar usuario.
         protected void Button1_Click(object sender, EventArgs e)
+        {
+            
+            if (checkMemberExists())
+            {
+
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showInfo()", true);
+            }
+            else
+            {
+                nuevoUsuario();
+            }
+        }
+
+        
+        bool checkMemberExists()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(_connStr);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("SELECT * from Users where MemberId='" + TextBox8.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+        }
+
+        void nuevoUsuario()
         {
             try
             {
@@ -32,8 +78,8 @@ namespace WebApplication
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Users(Nombre, Apellido, Telefono, Ciudad, Edad, FechaNacimiento, Email, Password, Direccion, MemberId) " +
-                    "values(@nombre, @apellido, @telefono, @ciudad, @edad, @fechaN, @email, @pass, @direccion, @memberId)", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Users(Nombre, Apellido, Telefono, Ciudad, Edad, FechaNacimiento, Email, Password, Direccion, EstadoCuenta, MemberId) " +
+                    "values(@nombre, @apellido, @telefono, @ciudad, @edad, @fechaN, @email, @pass, @direccion, @estado, @memberId)", con);
 
                 cmd.Parameters.AddWithValue("@nombre", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@apellido", TextBox2.Text.Trim());
@@ -44,6 +90,7 @@ namespace WebApplication
                 cmd.Parameters.AddWithValue("@email", TextBox6.Text.Trim());
                 cmd.Parameters.AddWithValue("@pass", TextBox9.Text.Trim());
                 cmd.Parameters.AddWithValue("@direccion", TextBox7.Text.Trim());
+                cmd.Parameters.AddWithValue("@estado", "pending");
                 cmd.Parameters.AddWithValue("@memberId", TextBox8.Text.Trim());
 
                 cmd.ExecuteNonQuery();

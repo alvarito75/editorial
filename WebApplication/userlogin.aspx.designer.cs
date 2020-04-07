@@ -7,6 +7,9 @@ namespace WebApplication
 
     public partial class userlogin
     {
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+
 
     }
 }

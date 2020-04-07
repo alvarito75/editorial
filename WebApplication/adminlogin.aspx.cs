@@ -12,9 +12,8 @@ using System.Web.UI.WebControls;
 namespace WebApplication
 {
 
-    public partial class userlogin : System.Web.UI.Page
+    public partial class adminlogin : System.Web.UI.Page
     {
-
         private static string _connStr = @"
             Server=127.0.0.1,1433;
             Database=EditorialDB;
@@ -33,19 +32,18 @@ namespace WebApplication
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select * from Users where MemberId='" + TextBox1.Text.Trim() + "' AND Password='" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from Admin where Username='" + TextBox1.Text.Trim() + "' AND Password='" + TextBox2.Text.Trim() + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
-                        //Response.Write("<script>alert('" + dr.GetValue(8).ToString() + "');</script>");
+                        //Response.Write("<script>alert('" + dr.GetValue(2).ToString() + "');</script>");
                         Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showSuccessful()", true);
-
-                        Session["username"] = dr.GetValue(12).ToString();
-                        Session["fullname"] = dr.GetValue(1).ToString();
-                        Session["role"] = "user";
-                        Session["status"] = dr.GetValue(10).ToString();
+                        Session["username"] = dr.GetValue(0).ToString();
+                        Session["fullname"] = dr.GetValue(2).ToString();
+                        Session["role"] = "admin";
+                        //Session["status"] = dr.GetValue(10).ToString();
 
                     }
                     Response.Redirect("/");

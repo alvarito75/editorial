@@ -16,7 +16,7 @@ namespace WebApplication
     {
         private static string _connStr = @"
             Server=127.0.0.1,1433;
-            Database=Music;
+            Database=EditorialDB;
             User Id=SA;
             Password=Alvarito_*5
         ";
@@ -29,14 +29,17 @@ namespace WebApplication
             try
             {
                 Response.Write("<script>console.log('Sign Up Successful. Go to User Login to Login');</script>");
+                string hola = tbadmin.Text;
+                Response.Write("<script>console.log('" + tbadmin.Text + "');</script>");
                 SqlConnection con = new SqlConnection(_connStr);
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO Artists(ArtistName) values(@name)", con);
-                //cmd.Parameters.AddWithValue("@id", 1);
-                cmd.Parameters.AddWithValue("@name", TextBox1.Text.Trim());
+                SqlCommand cmd = new SqlCommand("INSERT INTO Tests(Id, Nombre, Direccion) values(@id, @name, @direccion)", con);
+                cmd.Parameters.AddWithValue("@id", 1);
+                cmd.Parameters.AddWithValue("@name", hola);
+                cmd.Parameters.AddWithValue("@direccion", hola);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>console.log('Sign Up Successful. Go to User Login to Login');</script>");
@@ -51,3 +54,4 @@ namespace WebApplication
 
     }
 }
+

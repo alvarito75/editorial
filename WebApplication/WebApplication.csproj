@@ -1745,6 +1745,22 @@
     <Content Include="acerca_de_nosotros.aspx" />
     <Content Include="packages.config" />
     <Content Include="test.aspx" />
+    <Content Include="registrarusuario.aspx" />
+    <Content Include="sweetalert\js\sweetalert.min.js" />
+    <Content Include="sweetalert\css\sweetalert.css" />
+    <Content Include="bootstrap\js\custom.js" />
+    <Content Include="perfilusuario.aspx" />
+    <Content Include="administrar_autores.aspx" />
+    <Content Include="administrar_editores.aspx" />
+    <Content Include="images\cochasoft\login.png" />
+    <Content Include="images\cochasoft\gato de foto.jpg" />
+    <Content Include="images\cochasoft\publicite.jpg" />
+    <Content Include="images\cochasoft\invetari.jpg" />
+    <Content Include="images\cochasoft\banner1.jpg" />
+    <Content Include="images\cochasoft\gatoleyendo.jpg" />
+    <Content Include="images\cochasoft\EDITORIAL COCHASOFT.png" />
+    <Content Include="images\cochasoft\leyendo libro.jpg" />
+    <Content Include="images\cochasoft\visitanos.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -1798,6 +1814,30 @@
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="registrarusuario.aspx.cs">
+      <DependentUpon>registrarusuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="registrarusuario.aspx.designer.cs">
+      <DependentUpon>registrarusuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilusuario.aspx.cs">
+      <DependentUpon>perfilusuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perfilusuario.aspx.designer.cs">
+      <DependentUpon>perfilusuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_autores.aspx.cs">
+      <DependentUpon>administrar_autores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_autores.aspx.designer.cs">
+      <DependentUpon>administrar_autores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_editores.aspx.cs">
+      <DependentUpon>administrar_editores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrar_editores.aspx.designer.cs">
+      <DependentUpon>administrar_editores.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fontawesome\webfonts\fa-regular-400.woff2" />
@@ -1809,6 +1849,11 @@
     <None Include="fontawesome\metadata\shims.json" />
     <None Include="fontawesome\metadata\sponsors.yml" />
     <None Include="fontawesome\metadata\shims.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="sweetalert\" />
+    <Folder Include="sweetalert\js\" />
+    <Folder Include="sweetalert\css\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

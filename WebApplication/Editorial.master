@@ -9,12 +9,15 @@
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
         <link href="fontawesome/css/all.css" rel="stylesheet" />
+        <link href="sweetalert/css/sweetalert.css" rel="stylesheet" />
         <link href="bootstrap/css/custom.css" rel="stylesheet" />
             
             
         <script src="bootstrap/js/jquery-3.4.1.slim.min.js"></script>
         <script src="bootstrap/js/popper.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="sweetalert/js/sweetalert.min.js"></script>
+        <script src="bootstrap/js/custom.js"></script>
         
         <asp:ContentPlaceHolder ID="head" runat="server">
         </asp:ContentPlaceHolder>
@@ -57,7 +60,7 @@
                             <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">Login</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Registrarse</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton2" OnClick="LinkButton2_Click" runat="server">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Salir</asp:LinkButton>
@@ -90,9 +93,9 @@
                         <p>
                             <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server">Author Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" OnClick="LinkButton11_Click" runat="server">Administrar Autores</asp:LinkButton>
                             &nbsp;
-                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server">Publisher Management</asp:LinkButton>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" OnClick="LinkButton12_Click" runat="server">Administrar Editores</asp:LinkButton>
                             &nbsp;
                             <asp:LinkButton class="footerlinks" ID="LinkButton8" runat="server">Book Inventory</asp:LinkButton>
                             &nbsp;
@@ -102,7 +105,6 @@
                         </p>
  
                     </div>
- 
                 </div>
             </div>
             <div id="footer2" class="container-fluid">

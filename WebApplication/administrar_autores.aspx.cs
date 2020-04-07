@@ -5,9 +5,8 @@ using System.Web.UI;
 namespace WebApplication
 {
 
-    public partial class test
+    public partial class administrar_autores : System.Web.UI.Page
     {
-        protected global::System.Web.UI.WebControls.TextBox tbadmin;
 
     }
 }

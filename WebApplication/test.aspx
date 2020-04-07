@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="Editorial.master" Inherits="WebApplication.test" %>
+﻿<%@ Page Language="C#" MasterPageFile="Editorial.master" CodeBehind="test.aspx.cs" Inherits="WebApplication.test" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
